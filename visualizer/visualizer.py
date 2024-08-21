@@ -28,7 +28,7 @@ class get_local(object):
 
         def wrapper(*args, **kwargs):
             res, values = func(*args, **kwargs)
-            type(self).cache[func.__qualname__].append(values.detach().cpu().numpy())
+            type(self).cache[func.__qualname__].append(values)
             return res
         return wrapper
 
